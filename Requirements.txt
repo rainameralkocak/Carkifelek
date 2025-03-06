@@ -1,0 +1,48 @@
+# Kodumda Kullanılan Python Kütüphaneleri
+
+1. random (Python’un standart kütüphanesi)
+- Çark çevirmede rastgele puan belirlemek için kullanılıyor.
+- Standart kütüphane olduğu için requirements.txt içinde yer almasına gerek yok.
+
+
+2. datetime (Python’un standart kütüphanesi)
+- Kullanıcı doğum tarihi doğrulaması için kullanılıyor.
+- Standart olduğu için requirements.txt dosyasına eklenmesine gerek yok.
+
+3. os (Python’un standart kütüphanesi)
+- skorlar.txt dosyasının var olup olmadığını kontrol etmek için kullanılıyor.
+- Standart kütüphane olduğu için listeye eklemeye gerek yok.
+
+4.winsound (Sadece Windows işletim sisteminde çalışır)
+- Yanlış tahminlerde bir "bip" sesi çalmak için kullanılıyor.
+- Sadece Windowsta çalışan bir modül olduğu için requirements.txt içine şu şekilde eklenmeli:
+
+    winsound; sys_platform == "win32"
+
+
+- Eğer kodu Linux veya macOSta çalıştırmayı planlıyorsan, winsound yerine playsound veya pygame kullanabilirsin:
+
+    playsound
+     veya
+    pygame
+
+
+-- Bağımlılıkları Yükleme --
+- Eğer yukarıdaki requirements.txt dosyasını kaydettikten sonra terminalde veya komut istemcisinde şu komutu çalıştırırsan ilgili bağımlılıkları yüklemiş olursun.:
+
+    pip install -r requirements.txt
+
+- Bunlara ek olarak, projeyi bir sanallaştırılmış ortamda (venv) çalıştırmak istersen şu adımları izleyebilirsin:
+
+1. Sanal ortam oluştur (isteğe bağlı)
+    python -m venv venv
+
+2. Sanal ortamı etkinleştir
+    Windows:
+        venv\Scripts\activate
+
+    Linux/macOS:
+        source venv/bin/activate
+
+3. Bağımlılıkları yükle
+    pip install -r requirements.txt
